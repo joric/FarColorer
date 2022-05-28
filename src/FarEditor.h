@@ -132,6 +132,7 @@ class FarEditor : public LineSource
   int crossZOrder = 0;
   FarColor horzCrossColor{};
   FarColor vertCrossColor{};
+  FarColor whitespaceColor{};
 
   bool drawPairs = true;
   bool drawSyntax = true;

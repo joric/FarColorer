@@ -190,12 +190,16 @@ void FarEditor::setRegionMapper(RegionMapper* rs)
   rdBackground = StyledRegion::cast(baseEditor->rd_def_Text);
   horzCrossColor = convert(StyledRegion::cast(baseEditor->rd_def_HorzCross));
   vertCrossColor = convert(StyledRegion::cast(baseEditor->rd_def_VertCross));
+  whitespaceColor = convert(StyledRegion::cast(baseEditor->rd_def_Whitespace));
 
   if (!horzCrossColor.BackgroundColor && !horzCrossColor.ForegroundColor) {
     horzCrossColor.ForegroundColor = 0xE;
   }
   if (!vertCrossColor.BackgroundColor && !vertCrossColor.ForegroundColor) {
     vertCrossColor.ForegroundColor = 0xE;
+  }
+  if (!whitespaceColor.BackgroundColor && !whitespace.ForegroundColor) {
+    whitespaceColor.ForegroundColor = 0xE;
   }
 }
 
@@ -645,8 +649,10 @@ int FarEditor::editorEvent(intptr_t event, void* param)
           }
 
           if (whitespace) {
-            col1.ForegroundColor = rdBackground->fore;
+            col1.ForegroundColor = whitespaceColor.ForegroundColor;
+            col1.BackgroundColor = whitespaceColor.BackgroundColor;
           }
+
           // horizontal cross
           if (lno == ei.CurLine && showHorizontalCross) {
             if (crossZOrder != 0 && !whitespace) {
