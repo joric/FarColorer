@@ -1,4 +1,4 @@
 [submodule "external/colorer"]
 	path = external/colorer
-	url = https://github.com/colorer/Colorer-library
+	url = https://github.com/joric/Colorer-library
 	branch = master
