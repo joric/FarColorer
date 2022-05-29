@@ -198,7 +198,7 @@ void FarEditor::setRegionMapper(RegionMapper* rs)
   if (!vertCrossColor.BackgroundColor && !vertCrossColor.ForegroundColor) {
     vertCrossColor.ForegroundColor = 0xE;
   }
-  if (!whitespaceColor.BackgroundColor && !whitespace.ForegroundColor) {
+  if (!whitespaceColor.BackgroundColor && !whitespaceColor.ForegroundColor) {
     whitespaceColor.ForegroundColor = 0xE;
   }
 }
